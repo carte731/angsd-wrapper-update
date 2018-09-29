@@ -19,6 +19,7 @@ case "${setup_routine}" in
                 cd "${SOURCE}"/Wrappers
                 singularity pull shub://carte731/angsd_wrapper_update:latest
                 # ./angsd_singularity.simg "${SOURCE}" "${BASESOURCE}"
+                ./carte731-angsd-wrapper-update-master-latest.simg "${SOURCE}" "${BASESOURCE}"
                 echo -e "Angsd-Wrapper has been installed.\n"
         else
                 echo -e "Please install or module load Singularity.\n"
