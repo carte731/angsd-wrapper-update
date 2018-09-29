@@ -6,9 +6,6 @@ set -u
 #   Arguments
 declare -a args=("$@")
 
-echo -e "\n${args[0]}\n"
-#echo -e "\n$1\n"
-
 setup_routine="${args[0]}" # Which routine are we running
 SOURCE="${args[1]}" # Where is ANGSD-wrapper?
 BASESOURCE="${args[2]}"
@@ -25,7 +22,6 @@ case "${setup_routine}" in
                 echo -e "Please install or module load Singularity.\n"
                 exit 1
         fi
-        ;;
         echo "Please run 'source ~/.bash_profile' to complete installation"
         ;;
     "data" )
