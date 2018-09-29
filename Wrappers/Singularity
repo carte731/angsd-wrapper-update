@@ -72,6 +72,7 @@ Include: yum
         echo "export PATH="${samPath}":"'${PATH}' >> ~/.bash_profile # Add the path to bash_profile
 
 %post
+        yum group install -y "Development Tools"
     	yum -y install wget
     	yum install -y tar.x86_64	
 	yum install -y git

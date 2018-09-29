@@ -15,6 +15,7 @@ case "${setup_routine}" in
         if [[ -x $(command -v singularity) ]]; then
                 cd "${SOURCE}"/Wrappers
                 if [[ ! -f carte731-angsd-wrapper-update-master-latest.simg ]]; then
+                    echo -e "Installing CentOS-7 image for stable installation."
                     singularity pull shub://carte731/angsd-wrapper-update
                 fi
                 # ./angsd_singularity.simg "${SOURCE}" "${BASESOURCE}"
