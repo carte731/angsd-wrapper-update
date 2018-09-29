@@ -15,7 +15,7 @@ Include: yum
                 SOURCE="${BASESOURCE}"
         fi
 
-        echo alias "angsd-wrapper='`pwd -P`/angsd-wrapper'" >> ~/.bash_profile
+        echo alias "angsd-wrapper=${SOURCE}'/angsd-wrapper'" >> ~/.bash_profile
 
         cd ${SOURCE}
         mkdir dependencies
@@ -31,6 +31,7 @@ Include: yum
         make install
         make clean
         HTSLIB_DIR=$(pwd -P)/htslib-1.8
+        echo "export PATH=$(pwd):"'${PATH}' >> ~/.bash_profile # Add the path to bash_profile
 
         cd "${ROOT}"
 
@@ -80,3 +81,4 @@ Include: yum
 	yum -y update	
 
 	yum clean all
+        

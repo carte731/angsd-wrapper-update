@@ -17,7 +17,8 @@ case "${setup_routine}" in
     "dependencies" )
         if [[ -x $(command -v singularity) ]]; then
                 cd "${SOURCE}"/Wrappers
-                ./angsd_singularity.simg "${SOURCE}" "${BASESOURCE}"
+                singularity pull shub://carte731/angsd_wrapper_update:latest
+                # ./angsd_singularity.simg "${SOURCE}" "${BASESOURCE}"
                 echo -e "Angsd-Wrapper has been installed.\n"
         else
                 echo -e "Please install or module load Singularity.\n"
