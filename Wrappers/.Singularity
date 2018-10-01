@@ -4,7 +4,7 @@ MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearc
 Include: yum
 
 %runscript
-	echo "Angsd-Wrapper install test.\n"
+	echo "\nAngsd-Wrapper install test. HIDDEN TEST\n"
 	declare -a args=("$@")
 	INPUTSOURCE="${args[0]}"
         BASESOURCE="${args[1]}"
